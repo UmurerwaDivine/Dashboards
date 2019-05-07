@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+{%load staticfiles%}
+<body>
+{% block content %}
+{{block.super}}
+<div class="main">
+  
+  <canvas id="myChart" style="max-width: 500px;"></canvas>
+ 
+  <table >
+       
+    <tr>
+      <th>First_name</th>
+      <th>Last_name</th>
+      <th>Package_number</th>
+      <th>Phone</th>
+      <th>Driver</th>
+    </tr>
+    {% for board_item in all_users %}
+    <tr>
+     
+      <td>{{board_item.firstName}}</td>
+      <td>{{board_item.lastName}}</td>
+      <td>{{board_item.packageId}}</td>
+      <td>{{board_item.phone}}</td>
+      <td>{{board_item.driver.firstName}}</td>
+      
+
+   
+
+    
+  </table>
+  
+  {% empty %}
+   <div class="row">
+     <h2 class="text-center">there No pictures Items</h2>
+   </div>
+   {% endfor %}
+</div>
+<center><a href="{%url 'client'%}">add</a></center>
+</div>
+</div>
+ </div>
+{% endblock %}
+</body>
