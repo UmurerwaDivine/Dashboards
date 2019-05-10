@@ -1,22 +1,9 @@
-{% extends 'base.html' %} 
-{%load bootstrap3%}
-{% load static %}
-{%load staticfiles%}
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+
+
 {% block content %}
-{{ block.super }}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Trucker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
-</head>
-<body>
-    <div class="main">
-       
+{{block.super}}
 <body>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
    <!-- Indicators -->
@@ -124,5 +111,3 @@
  </div>
 {% endblock %}
 </body>
-</body>
-</html> 

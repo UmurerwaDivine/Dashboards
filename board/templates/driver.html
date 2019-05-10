@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+{%load staticfiles%}
+<body>
+{% block content %}
+{{block.super}}
+<div class="main">
+  
+  <canvas id="myChart" style="max-width: 500px;"></canvas>
+ 
+  <table >
+       
+    <tr>
+  
+      <th>First_name</th>
+      <th>Last_name</th>
+      <th>plate_number</th>
+      <th>Phone</th>
+      <th>pub_date</th>
+    </tr>
+     {% for board_item in all_driver %} 
+    <tr>
+  
+      <td>{{board_item.firstName}}</td>
+      <td>{{board_item.lastName}}</td>
+      <td>{{board_item.plate_number}}</td>
+      <td>{{board_item.phone}}</td>
+      <td>{{board_item.pub_date}}</td>
+      <td>{{state}}</td>
+      
+
+      {% endfor %}
+
+    
+  </table>
+  
+
+   <!-- <div class="row">
+     <h2 class="text-center">there No pictures Items</h2>
+   </div>
+  
+</div> -->
+<center><a href="{%url 'driver'%}">add</a></center>
+</div>
+</div>
+ </div>
+{% endblock %}
+</body>
